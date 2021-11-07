@@ -1,0 +1,47 @@
+﻿set system login user admin uid 1776
+set system login user admin class super-user
+set system login user admin authentication encrypted-password "$6$vcbMfF3h$20Vfv7JBM/uvFOoEVpdAmr8u9YHDXiPFMXqToBsOT2JyQEHP2s2OFQl88zdNHKmtccDAW/NjcEBA7qBxp2t851"
+set system root-authentication encrypted-password "$6$F71K24WT$b8yZ.grgQsUqls9.0rk2dnOZORFzJry1/a2pERn0vbf9cesZ3CabUE4efRNakDylu6yU4r6xtZadtcQPrSF2w."
+set system services ssh root-login allow
+set system services ssh protocol-version v2
+set system services netconf ssh
+set system host-name CSR8
+set system domain-name bytesofcloud.local
+set system management-instance
+set system syslog user * any emergency
+set system syslog file messages any notice
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set system processes dhcp-service traceoptions file dhcp_logfile
+set system processes dhcp-service traceoptions file size 10m
+set system processes dhcp-service traceoptions level all
+set system processes dhcp-service traceoptions flag packet
+set chassis aggregated-devices ethernet device-count 1
+set interfaces ge-0/0/0 description CSR6
+set interfaces ge-0/0/0 unit 0 family inet address 172.16.255.26/30
+set interfaces ge-0/0/8 description VPC-1
+set interfaces ge-0/0/8 unit 0 family bridge interface-mode access
+set interfaces ge-0/0/8 unit 0 family bridge vlan-id 100
+set interfaces ge-0/0/9 description VPC-3
+set interfaces ge-0/0/9 unit 0 family bridge interface-mode access
+set interfaces ge-0/0/9 unit 0 family bridge vlan-id 101
+set interfaces fxp0 unit 0 family inet address 192.168.21.108/24
+set interfaces irb unit 100 description "SERVER 1"
+set interfaces irb unit 100 family inet address 192.168.100.1/24
+set interfaces irb unit 101 description "SERVER 2"
+set interfaces irb unit 101 family inet address 192.168.101.1/24
+set interfaces lo0 unit 0 family inet address 10.255.255.108/32
+set policy-options policy-statement EXP-CONNECTED-OSPF term 1 from protocol direct
+set policy-options policy-statement EXP-CONNECTED-OSPF term 1 then accept
+set routing-instances mgmt_junos routing-options static route 0.0.0.0/0 next-hop 192.168.21.1
+set routing-options router-id 10.255.255.108
+set protocols ospf area 0.0.0.1 interface ge-0/0/0.0
+set protocols ospf area 0.0.0.1 interface lo0.0
+set protocols ospf export EXP-CONNECTED-OSPF
+set protocols lldp interface all
+set bridge-domains vlan-100 description "SERVER 1"
+set bridge-domains vlan-100 vlan-id 100
+set bridge-domains vlan-100 routing-interface irb.100
+set bridge-domains vlan-101 description "SERVER 2"
+set bridge-domains vlan-101 vlan-id 101
+set bridge-domains vlan-101 routing-interface irb.101

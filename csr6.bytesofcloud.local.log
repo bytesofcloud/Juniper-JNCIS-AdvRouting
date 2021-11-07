@@ -1,0 +1,33 @@
+﻿set system login user admin uid 1776
+set system login user admin class super-user
+set system login user admin authentication encrypted-password "$6$rBDh8aS8$fIZJwDLwvVi4lp6VlOtIMldu0T0qZJ/FDOMJUPXJ9nyJhF9UCQFt/uwwKhNet.m9WBt67L8EYjq82glJKJFjw/"
+set system root-authentication encrypted-password "$6$Xll4mEVT$hzD5/5.tHt1gBIBJbaq0OuUmA6QOvqVpgPAsqfpHW79WHTYrTaX/.34xObJyJuWCGQ3IH4wECaPz3h6KcRS3q/"
+set system services ssh root-login allow
+set system services ssh protocol-version v2
+set system services netconf ssh
+set system host-name CSR6
+set system domain-name bytesofcloud.local
+set system management-instance
+set system syslog user * any emergency
+set system syslog file messages any notice
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set system processes dhcp-service traceoptions file dhcp_logfile
+set system processes dhcp-service traceoptions file size 10m
+set system processes dhcp-service traceoptions level all
+set system processes dhcp-service traceoptions flag packet
+set chassis aggregated-devices ethernet device-count 2
+set interfaces ge-0/0/0 description CSR2
+set interfaces ge-0/0/0 unit 0 family inet address 172.16.255.22/30
+set interfaces ge-0/0/1 description CSR8
+set interfaces ge-0/0/1 unit 0 family inet address 172.16.255.25/30
+set interfaces ge-0/0/2 description CSR9
+set interfaces ge-0/0/2 unit 0 family inet address 172.16.255.29/30
+set interfaces fxp0 unit 0 family inet address 192.168.21.106/24
+set interfaces lo0 unit 0 family inet address 10.255.255.106/32
+set routing-instances mgmt_junos routing-options static route 0.0.0.0/0 next-hop 192.168.21.1
+set routing-options router-id 10.255.255.106
+set protocols ospf area 0.0.0.1 interface ge-0/0/0.0
+set protocols ospf area 0.0.0.1 interface ge-0/0/1.0
+set protocols ospf area 0.0.0.1 interface ge-0/0/2.0
+set protocols lldp interface all

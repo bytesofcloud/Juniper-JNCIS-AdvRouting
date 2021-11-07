@@ -1,0 +1,35 @@
+﻿set system login user admin uid 1776
+set system login user admin class super-user
+set system login user admin authentication encrypted-password "$6$/9606Il7$CC0UKu1I1IMmYuaftqUZrHjdzP1BfdqVVGMTPqoh/kVtjRWG5nzdvh4FnYXRCwrGnTHNSWWcUDQIYE83S6XQk0"
+set system root-authentication encrypted-password "$6$HaRoJFA2$G8lIjD5d7R.szfnzZL5s4xEbHd.wdl3S6XlYyRvN35zo0BIlupeH842w5KVJRC0b.fmlyJCluAZ2rvkqVc4fQ."
+set system services ssh root-login allow
+set system services ssh protocol-version v2
+set system services netconf ssh
+set system host-name CSR2
+set system domain-name bytesofcloud.local
+set system management-instance
+set system syslog user * any emergency
+set system syslog file messages any notice
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set system processes dhcp-service traceoptions file dhcp_logfile
+set system processes dhcp-service traceoptions file size 10m
+set system processes dhcp-service traceoptions level all
+set system processes dhcp-service traceoptions flag packet
+set interfaces ge-0/0/0 description CSR1
+set interfaces ge-0/0/0 unit 0 family inet address 172.16.255.2/30
+set interfaces ge-0/0/1 description CSR4
+set interfaces ge-0/0/1 unit 0 family inet address 172.16.255.18/30
+set interfaces ge-0/0/2 description CSR6
+set interfaces ge-0/0/2 unit 0 family inet address 172.16.255.21/30
+set interfaces fxp0 unit 0 family inet address 192.168.21.102/24
+set interfaces lo0 description "NETWORK MGMT"
+set interfaces lo0 unit 0 family inet address 10.255.255.102/32
+set policy-options policy-statement FLOW-LOAD-SHARING term 1 then load-balance per-packet
+set routing-instances mgmt_junos routing-options static route 0.0.0.0/0 next-hop 192.168.21.1
+set routing-options router-id 10.255.255.102
+set protocols ospf area 0.0.0.0 interface ge-0/0/0.0
+set protocols ospf area 0.0.0.0 interface ge-0/0/1.0
+set protocols ospf area 0.0.0.1 interface ge-0/0/2.0
+set protocols ospf export FLOW-LOAD-SHARING
+set protocols lldp interface all
