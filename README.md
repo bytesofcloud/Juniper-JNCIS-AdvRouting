@@ -80,7 +80,11 @@ This lab focuses on basic layer-2 and layer-3 switching within a standard data c
   <li>Loopback Interfaces: 10.255.255.0/24 (Subdivide to /32)</li>
   <li>VLANs: 192.168.0.0/16 (Subdivide to /24)</li>
 </ul><p>
-
+<b><i>Lab User Accounts (username / password)</b></i>
+  <ul>
+    <li>root / abc123</li>
+    <li>admin / abc123</li>
+  </ul><p>
 <b>//// VENDOR GUIDES \\\\</b>
 <p><a href="https://support.juniper.net" rel="nofollow">https://support.juniper.net</a></p>
 <p><a href="https://https://learningportal.juniper.net" rel="nofollow">https://https://learningportal.juniper.net</a></p>
