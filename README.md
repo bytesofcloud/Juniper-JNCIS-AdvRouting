@@ -3,7 +3,7 @@
 
 This series of configurations were configured for the JUNIPER JNCIS-ENT examination topics. These configurations should help the student understanding of the topic and provide an option to adjust the configuration values to understand traffic patterns.
 
-<b>//// HARDAWARE | SOFTWARE SPECIFICATIONS \\\\</b><p>
+<b>//// HARDWARE | SOFTWARE SPECIFICATIONS \\\\</b><p>
 <i> Virtualized Network Devices:</i>
 <blockquote>
 Vendor:: Juniper<br>
