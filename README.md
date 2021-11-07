@@ -38,7 +38,7 @@ This lab is based on a bare metal install of the EVE-NG Community Edition. It ma
 
 <b>//// CODE REQUIREMENTS \\\\</b>
 
-To obtain the JUNOS code, you will need to create an account at <a href="HTTPS://WWW.JUNIPER.NET" rel="nofollow">HTTPS://WWW.JUNIPER.NET</a>. Virtual code contains certain restrictions and is regulated by the vendor.
+To obtain the JUNOS code, you will need to create an account at <a target=_blank href="HTTPS://WWW.JUNIPER.NET" rel="nofollow">HTTPS://WWW.JUNIPER.NET</a>. Virtual code contains certain restrictions and is regulated by the vendor.
 <p>
 <b>//// LAB DESCRIPTION \\\\</b><p>
 This lab focuses on basic layer-2 and layer-3 switching within a standard data center or MDF deployment. Many company's set up their data centers with MC-LAG, VRRP/HSRP, and SVIs on the spine/core of the data center. If you're studying or deploying MC-LAG and VRRP on a JUNIPER JUNOS MX device, this lab will give you a base to begin a deployment. You will need to customize this configuraiton for your environment and business needs if you deploy for a production network. If you are studying for the JNCx certification, this lab will provide a "standard" deployment where you may customize, destroy, and then spin up. It's good to get familiar with all the options.
@@ -86,9 +86,9 @@ This lab focuses on basic layer-2 and layer-3 switching within a standard data c
     <li>admin / abc123</li>
   </ul><p>
 <b>//// VENDOR GUIDES \\\\</b>
-<p><a href="https://support.juniper.net" rel="nofollow">https://support.juniper.net</a></p>
-<p><a href="https://https://learningportal.juniper.net" rel="nofollow">https://https://learningportal.juniper.net</a></p>
-<p><a href="https://www.eve-ng.net/index.php/documentation/" rel="nofollow">https://www.eve-ng.net/index.php/documentation/</a></p>
+<p><a target=_blank href="https://support.juniper.net" rel="nofollow">Juniper Support </a></p>
+<p><a target=_blank href="https://learningportal.juniper.net" rel="nofollow">Juniper Learning Portal</a></p>
+<p><a target=_blank href="https://www.eve-ng.net/index.php/documentation/" rel="nofollow">EVE-NG Documentation</a></p>
 
 <b>//// LAB IMAGE \\\\</b>
 
