@@ -41,17 +41,16 @@ This lab is based on a bare metal install of the EVE-NG Community Edition. It ma
 To obtain the JUNOS code, you will need to create an account at <a target=_blank href="HTTPS://WWW.JUNIPER.NET" rel="nofollow">HTTPS://WWW.JUNIPER.NET</a>. Virtual code contains certain restrictions and is regulated by the vendor.
 <p>
 <b>//// LAB DESCRIPTION \\\\</b><p>
-This lab focuses on basic layer-2 and layer-3 switching within a standard data center or MDF deployment. Many company's set up their data centers with MC-LAG, VRRP/HSRP, and SVIs on the spine/core of the data center. If you're studying or deploying MC-LAG and VRRP on a JUNIPER JUNOS MX device, this lab will give you a base to begin a deployment. You will need to customize this configuraiton for your environment and business needs if you deploy for a production network. If you are studying for the JNCx certification, this lab will provide a "standard" deployment where you may customize, destroy, and then spin up. It's good to get familiar with all the options.
+This lab focuses on layer-3 route/switching across two data centers and a backbone network. This lab focuses on layer-3 connectivity and may be modified to support BGP, IS-IS, and OSPF deployments. If you are studying for the JNCx certification, this lab will provide a "standard" deployment where you may customize, destroy, and then spin up. It's good to get familiar with all the options.
 <p>
   <i>Lab Requirements/Objectives:</i>
   <ul>
-    <li> Create active/passive MCLAG</li> 
-    <li> Create active/active MCLAG</li> 
-    <li> Create layer-2 segmentation</li> 
-    <li> Create layer-3 segmentaiton</li> 
-    <li> Create layer-3 redundancy for LAN connectivity</li> 
-    <li> Verify configuration status of MCLAG and NHRP configurations</li> 
-    <li> Test status by disabling interfaces</li> 
+    <li> Deploy IPv4 addressing for WAN/LAN links</li> 
+    <li> Exchange full routes with all devices</li> 
+    <li> Leverage route policies to control backbone and edge route advertisements</li> 
+    <li> Deploy IPv6 addresses and consider address allocation</li> 
+    <li> Advertise IPv6 addresses for route convergance</li> 
+    <li> Practice IPv4 and IPv6 tunneling methodologies</li>  
   </ul>
   <p>
 
@@ -72,6 +71,9 @@ This lab focuses on basic layer-2 and layer-3 switching within a standard data c
   <li>CSR10/VCP10: 192.168.21.110<br></li>
   <li>CSR11/VCP11: 192.168.21.111<br></li>
  </ul>
+<ul>
+  <li> WAN: 2001:db8:cafe::/48</li>
+  <li> Loopback: 2001:db8:cafe::a:/96</li>
 </blockquote>
 <p>
   <b><i>Subnet IP Scheme:</i></b>
